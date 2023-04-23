@@ -11,7 +11,10 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
-os.environ['OPENAI_API_KEY'] = "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"
+
+with open('paste-your-OpenAI_API_KEY-here.txt', 'r') as file:
+    key = [line.rstrip() for line in file.readlines()][0]
+    os.environ['OPENAI_API_KEY'] = key
 loader = TextLoader('document.txt')
 documents = loader.load()
 textSplitter = RecursiveCharacterTextSplitter(chunk_size = 200, chunk_overlap = 20)

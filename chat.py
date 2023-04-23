@@ -1,5 +1,5 @@
 import requests
-
+import os
 
 
 url = 'http://localhost:5000/chat'
